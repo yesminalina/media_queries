@@ -1,0 +1,238 @@
+/* Versión Mobile */
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 12% 68% 10%;
+    grid-template-areas:
+        "nav"
+        "filtro"
+        "main"
+        "footer";
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Barra Navegación */
+nav {
+    grid-area: nav;
+    background-color: #EDB7ED;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em 0 1em;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.brand i {
+    margin-right: 0.5em;
+}
+
+.menu {
+    display: none;
+}
+
+
+/* Filtro */
+.filtro {
+    grid-area: filtro;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #8DDFCB;
+    padding: 1em;
+}
+
+.filtro div {
+    width: 70%;
+    padding: 0.2em;
+}
+
+.filtro p {
+    margin: 0;
+}
+
+select {
+    padding: 0.5em 0 0.5em 0.5em;
+    color: gray;
+    border: lightgray solid 1px;
+    border-radius: 4px;
+    width: 70%;
+}
+
+/* Grilla productos */
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.grilla {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1em;
+    overflow-y: scroll;
+    width: 80%;
+
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: solid lightgray 1px;
+    border-radius: 4px;
+    margin-bottom: 1.5em;
+}
+
+.producto img {
+    max-width: 100%;
+}
+
+.txt_producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.producto button {
+    background-color: #EDB7ED;
+    border: gray solid 1px;
+    border-radius: 4px;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: large;
+}
+
+.producto button a {
+    color: white;
+}
+
+.paginas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.paginas a {
+    color: #82A0D8;
+}
+
+.paginas div {
+    border: solid gray 1px;
+    border-right: none;
+    padding: 0.7em;
+}
+
+.paginas div:last-child {
+    border-right: solid gray 1px;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #82A0D8;
+    color: white;
+    padding: 1em;
+}
+
+footer div {
+    margin-right: 0.5em;
+}
+
+/* Versión de Escritorio */
+
+@media (min-width: 576px) {
+    body {
+        grid-template-columns: 20% auto auto auto auto;
+        grid-template-rows: 15% 65% 20%;
+        grid-template-areas:
+            "nav filtro filtro filtro filtro"
+            "nav main main main main"
+            "footer main main main main";
+    }
+
+    /* Barra navegación */
+    nav {
+        justify-content: start;
+        flex-direction: column;
+        padding-top: 1em;
+    }
+
+    nav a {
+        color: white;
+    }
+
+    .menu {
+        margin: 0.75em;
+        display: flex;
+    }
+
+    .brand {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hamburguesa {
+        display: none;
+    }
+
+    /* Filtro */
+
+    .filtro {
+        padding-top: 0.7em;
+    }
+
+    /* Grilla de productos */
+
+    .grilla {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1em;
+        width: 90%;
+    }
+
+    .producto {
+        width: 20%;
+    }
+
+    /* Footer */
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer p {
+        margin-bottom: 0;
+    }
+}
